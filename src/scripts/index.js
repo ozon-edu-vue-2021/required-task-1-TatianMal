@@ -10,12 +10,12 @@ const popupContainer = document.querySelector('.popup .content');
 const popupClose = document.querySelector('.popup .action');
 const loader = document.querySelector('.loader');
 
-const MAX_PAGE_IAMGES = 34;
+const MAX_PAGE_IMAGES = 34;
 let loaderTimeout;
 
 /**
  * Функция задаёт первоначальное состояние страницы.
- * Отправляется первый запрос за картинками, юез параметров т.к. с дефолтными настройками.
+ * Отправляется первый запрос за картинками, без параметров т.к. с дефолтными настройками.
  */
 const initialState = function () {
     action.disabled = false;
@@ -91,10 +91,10 @@ const renderPictures = function (list) {
         throw Error(`Pictures not defined. The list length: ${list.length}`);
     }
 
-    const clone = templateImageCard.content.cloneNode(true);
     const fragment = document.createDocumentFragment();
 
     list.forEach(function (element) {
+        const clone = templateImageCard.content.cloneNode(true);
         const link = clone.querySelector('a');
 
         link.href = element.url;
@@ -154,8 +154,8 @@ const actionHandler = function (evt) {
     const nextPage = evt.currentTarget.dataset.page;
     evt.currentTarget.dataset.page = nextPage + 1;
 
-    if (nextPage > MAX_PAGE_IAMGES) {
-        console.warn(`WARN: You are trying to call a page that exceeds ${MAX_PAGE_IAMGES}`);
+    if (nextPage > MAX_PAGE_IMAGES) {
+        console.warn(`WARN: You are trying to call a page that exceeds ${MAX_PAGE_IMAGES}`);
         evt.currentTarget.disabled = true;
     } else {
         getPictures(nextPage);
