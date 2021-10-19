@@ -70,7 +70,6 @@ const showLoader = function() {
 const hideLoader = function() {
   loaderTimeout = setTimeout(function() {
     loader.style.visibility = "hidden";
-    loaderTimeout.clearTimeout();
   }, 700);
 };
 
@@ -181,8 +180,9 @@ const actionHandler = function(evt) {
 const imageHandler = function(evt) {
   evt.preventDefault();
 
-  if (evt.target.closest("a")) {
-    getPictureInfo(evt.target.dataset.id);
+  const link = evt.target.closest("a");
+  if (link) {
+    getPictureInfo(link.dataset.id);
   }
 };
 

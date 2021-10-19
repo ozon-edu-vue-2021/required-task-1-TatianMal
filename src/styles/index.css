@@ -135,15 +135,15 @@ figcaption {
 }
 
 .action.close {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    background-color: transparent;
-    line-height: 0;
-    font-size: 50px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: transparent;
+  line-height: 0;
+  font-size: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .popup .content {
