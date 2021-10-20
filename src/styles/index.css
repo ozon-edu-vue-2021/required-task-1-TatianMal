@@ -103,15 +103,22 @@ figure {
   max-width: 100%;
   min-height: 350px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 }
 
 figure img {
   border-radius: 6px;
+  max-height: 80vh;
+  width: auto;
+  align-self: center;
 }
 
 figcaption {
   color: #424242;
   margin: 5px 0;
+  justify-self: right;
 }
 
 .content {
