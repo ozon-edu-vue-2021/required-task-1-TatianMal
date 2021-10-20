@@ -118,6 +118,10 @@ figcaption {
   border-radius: 6px;
 }
 
+.content a {
+  background-color: #fff;
+}
+
 .popup {
   position: fixed;
   visibility: hidden;
@@ -140,7 +144,7 @@ figcaption {
   right: 50px;
   background-color: transparent;
   line-height: 0;
-  font-size: 50px;
+  font-size: 30px;
   width: 40px;
   height: 40px;
   border-radius: 50%;

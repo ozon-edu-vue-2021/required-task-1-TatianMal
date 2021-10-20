@@ -159,7 +159,7 @@ const togglePopup = function() {
 const actionHandler = function(evt) {
   evt.preventDefault();
   const nextPage = evt.currentTarget.dataset.page;
-  evt.currentTarget.dataset.page = nextPage + 1;
+  evt.currentTarget.dataset.page = parseInt(nextPage) + 1;
 
   if (nextPage > MAX_PAGE_IMAGES) {
     console.warn(
