@@ -36,6 +36,10 @@ const getPictures = function(page = 1, limit = 10) {
     })
     .then(function(result) {
       renderPictures(result);
+    })
+    .catch(function(error) {
+      console.error(`Get pictures error: ${error}`);
+      hideLoader();
     });
 };
 
@@ -52,6 +56,10 @@ const getPictureInfo = function(id = 0) {
     })
     .then(function(result) {
       renderPopupPicture(result);
+    })
+    .catch(function(error) {
+      console.error(`Get picture info error: ${error}`);
+      hideLoader();
     });
 };
 
@@ -70,6 +78,7 @@ const showLoader = function() {
 const hideLoader = function() {
   loaderTimeout = setTimeout(function() {
     loader.style.visibility = "hidden";
+    clearTimeout(loaderTimeout);
   }, 700);
 };
 
